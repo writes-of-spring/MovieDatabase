@@ -41,7 +41,13 @@ class MovieDetail extends Component {
 
           <div className="movieInfo">
             <h1>{movie.title}</h1>
-            <h3>{new Date(movie.release_date).toLocaleDateString()}</h3>
+            <h3>
+              {new Date(movie.release_date).toLocaleDateString(undefined, {
+                day: 'numeric',
+                month: 'long',
+                year: 'numeric',
+              })}
+            </h3>
             <p>{movie.overview}</p>
           </div>
         </MovieInfo>
